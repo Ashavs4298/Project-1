@@ -24,6 +24,9 @@
         radial-gradient(ellipse at 12% 15%, rgba(43, 197, 255, .11), transparent 42%),
         #0b1020;
     }
+    .site-nav { position: fixed; z-index: 2; top: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; padding: 6px; border: 1px solid rgba(188,203,255,.14); border-radius: 999px; background: rgba(12,18,37,.72); backdrop-filter: blur(16px); }
+    .site-nav a { padding: 10px 15px; border-radius: 999px; color: #9aa8ca; font-size: 13px; text-decoration: none; transition: color .2s, background .2s; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: #f5f7ff; background: rgba(255,255,255,.09); }
     .grain {
       position: fixed;
       inset: 0;
@@ -102,6 +105,11 @@
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <main>
     <div class="halo" aria-hidden="true"></div>
     <div class="eyebrow"><span class="spark" aria-hidden="true"></span> A little something to start</div>
