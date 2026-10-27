@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="A small collection of colors, places, and moments that inspire Asha.">
+  <title>Gallery — Hello, world.</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b1020; color: #f5f7ff; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; background: radial-gradient(ellipse at 50% 0%, rgba(102,75,255,.17), transparent 38%), radial-gradient(ellipse at 5% 55%, rgba(43,197,255,.08), transparent 38%), #0b1020; }
+    .grain { position: fixed; z-index: 1; inset: 0; pointer-events: none; opacity: .1; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E"); }
+    .site-nav { position: fixed; z-index: 3; top: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; max-width: calc(100% - 24px); padding: 6px; border: 1px solid rgba(188,203,255,.14); border-radius: 999px; background: rgba(12,18,37,.78); backdrop-filter: blur(16px); }
+    .site-nav a { padding: 10px 15px; border-radius: 999px; color: #9aa8ca; font-size: 13px; text-decoration: none; transition: color .2s, background .2s; white-space: nowrap; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: #f5f7ff; background: rgba(255,255,255,.09); }
+    main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 142px 0 72px; animation: arrive .8s cubic-bezier(.2,.8,.2,1) both; }
+    .intro { margin: 0 auto 42px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid rgba(188,203,255,.15); border-radius: 999px; background: rgba(255,255,255,.045); color: #b7c5ed; font-size: 11px; font-weight: 650; letter-spacing: .16em; text-transform: uppercase; }
+    .spark { width: 7px; height: 7px; border-radius: 50%; background: #65edc1; box-shadow: 0 0 13px #65edc1; }
+    h1 { margin: 22px 0 13px; font-size: clamp(48px,8vw,78px); line-height: 1; letter-spacing: -.07em; font-weight: 760; }
+    h1 span { background: linear-gradient(105deg,#fbfdff 12%,#a8bbff 54%,#75e4e6 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .description { max-width: 490px; margin: 0 auto; color: #9aa8ca; font-size: 16px; line-height: 1.75; }
+    .gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+    figure { position: relative; isolation: isolate; overflow: hidden; min-height: 310px; margin: 0; border: 1px solid rgba(188,203,255,.14); border-radius: 20px; background: #151d36; box-shadow: 0 18px 50px rgba(0,0,0,.18); }
+    figure img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.8,.2,1); }
+    figure:hover img { transform: scale(1.055); }
+    figure::after { position: absolute; z-index: -1; inset: 35% 0 0; content: ""; background: linear-gradient(transparent,rgba(7,11,24,.88)); }
+    figcaption { position: absolute; right: 20px; bottom: 19px; left: 20px; }
+    figcaption span { display: block; margin-bottom: 6px; color: #b9c8ef; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    figcaption strong { font-size: 19px; font-weight: 620; letter-spacing: -.025em; }
+    footer { margin-top: 30px; color: #697797; font-size: 12px; text-align: center; letter-spacing: .08em; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 760px) { .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); } figure { min-height: 280px; } }
+    @media (max-width: 520px) { .site-nav { top: 14px; } .site-nav a { padding: 9px 11px; font-size: 12px; } main { width: min(100% - 28px,440px); padding-top: 112px; } .gallery { grid-template-columns: 1fr; gap: 14px; } figure { min-height: 330px; } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html" aria-current="page">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <header class="intro">
+      <div class="eyebrow"><span class="spark" aria-hidden="true"></span> Collected along the way</div>
+      <h1><span>A little gallery.</span></h1>
+      <p class="description">A few colors, places, and quiet moments that make me want to keep looking.</p>
+    </header>
+    <section class="gallery" aria-label="Photo gallery">
+      <figure><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Mountain peaks reflected in a still alpine lake" loading="lazy"><figcaption><span>Outdoors</span><strong>Still water, early light</strong></figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Golden sunrise spreading across a misty landscape" loading="lazy"><figcaption><span>Light</span><strong>The first few minutes</strong></figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Soft blue waves rolling across the ocean" loading="lazy"><figcaption><span>By the water</span><strong>Somewhere, the sea</strong></figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A sunlit path winding through a green forest" loading="lazy"><figcaption><span>Wandering</span><strong>A path through green</strong></figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A delicate cluster of flowers in warm afternoon light" loading="lazy"><figcaption><span>Small things</span><strong>In the garden</strong></figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Rolling green hills beneath a bright open sky" loading="lazy"><figcaption><span>Open spaces</span><strong>Room to breathe</strong></figcaption></figure>
+    </section>
+    <footer>Made for the curious</footer>
+  </main>
+</body>
+</html>
